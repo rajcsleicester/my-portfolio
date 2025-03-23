@@ -1,0 +1,12 @@
+/* About.css */
+.about {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;  /* Adds rounded corners to the about section */
+}
+
+.profile-img {
+  width: 150px;               /* Sets the image width */
+  border-radius: 50%;         /* Makes the image circular */
+}

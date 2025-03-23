@@ -1,0 +1,35 @@
+/* Projects.css */
+.projects {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projects h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projects li {
+    font-size: 1.2rem;
+    color: #555;
+    padding: 8px;
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.projects li:hover {
+    background-color: #f4a261;
+    color: white;
+    cursor: pointer;
+}
