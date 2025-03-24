@@ -17,7 +17,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "rajcsleicester.github.io/my-portfolio",
+  "homepage": "https://rajcsleicester.github.io/my-portfolio/",
   "browserslist": {
     "production": [
       ">0.2%",
