@@ -1,13 +1,13 @@
 # Raj Jethwa - Full-Stack Developer
 
 Hi! I'm **Raj**, an aspiring Full-Stack Developer and problem solver.  
-Currently exploring **Politics & Economics** while building digital skills in **Python, Java, JavaScript, C#, HTML & CSS, and SQL**.  
+Currently exploring **Politics & Economics** while building digital skills in **Python, Java, JavaScript, C#, HTML & CSS,Javascript, React,NodeJS and SQL**.  
 
 ---
 
 ## 🔹 Skills
 - **Programming Languages:** Python, Java, JavaScript, C#  
-- **Web Development:** HTML, CSS, JavaScript  
+- **Web Development:** HTML, CSS, JavaScript,React,NodeJS
 - **Databases:** SQL  
 - **Other Tools:** Git, GitHub, VS Code  
 
