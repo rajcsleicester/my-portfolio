@@ -1,8 +1,8 @@
-/* ------------------------------------------------------
-   GLOBAL RESET + SMOOTH SCROLL + FONTS
+/* ---------------------------------------------------------
+   GLOBAL
 --------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 * {
     margin: 0;
@@ -10,173 +10,203 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
-    color: #e6e6e6;
-    line-height: 1.7;
+    background: #050505;
+    color: #fff;
     overflow-x: hidden;
 }
 
-
-/* ------------------------------------------------------
-   ANIMATION BASE CLASSES
---------------------------------------------------------- */
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeIn 1s ease forwards;
+/* Animated gradient background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(120deg, #0a0a0a, #001133, #0a0a0a);
+    background-size: 300% 300%;
+    animation: gradientMove 14s infinite alternate ease-in-out;
+    z-index: -2;
 }
 
-.fade-in-delay {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s ease forwards 0.4s;
+@keyframes gradientMove {
+    from { background-position: 0% 50%; }
+    to   { background-position: 100% 50%; }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-
-/* ------------------------------------------------------
-   SECTIONS
---------------------------------------------------------- */
-
-.section {
-    padding: 80px 20px;
-    max-width: 950px;
-    margin: auto;
-    animation: fadeIn 1s ease forwards;
-}
-
-h1, h2, h3 {
-    text-align: center;
-    font-weight: 600;
-}
-
-
-/* ------------------------------------------------------
+/* ---------------------------------------------------------
    HERO SECTION
 --------------------------------------------------------- */
 
 .hero {
+    padding: 140px 20px;
     text-align: center;
-    padding: 120px 20px;
-    background: linear-gradient(135deg, #111, #222);
-    box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.05);
     position: relative;
-    overflow: hidden;
 }
 
-/* floating gradient animation */
+/* Floating neon blob */
 .hero::before {
-    content:"";
+    content: "";
     position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(0,150,255,0.4), transparent);
-    top: -100px;
-    left: -100px;
-    filter: blur(80px);
-    animation: floatGlow 8s infinite alternate ease-in-out;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(0,140,255,0.5), transparent 60%);
+    filter: blur(90px);
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: floatBlob 8s ease-in-out infinite alternate;
+    z-index: -1;
 }
 
-@keyframes floatGlow {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 60px); }
+@keyframes floatBlob {
+    0%   { transform: translate(-50%, 0); }
+    100% { transform: translate(-50%, 40px); }
 }
 
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    animation: fadeUp 1.2s ease forwards;
+    opacity: 0;
+}
+
+.hero h2 {
+    margin-top: 10px;
+    font-size: 22px;
+    opacity: 0;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+/* Profile picture with neon glow */
 .profile-pic {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 25px rgba(0,150,255,0.4);
-    margin-bottom: 20px;
-    animation: fadeIn 1.5s ease forwards;
+    margin: 25px 0;
+    border: 5px solid rgba(0, 140, 255, 0.5);
+    box-shadow: 0 0 35px rgba(0, 140, 255, 0.7);
+    animation: fadeUp 1.5s ease forwards;
+    opacity: 0;
 }
 
+@keyframes fadeUp {
+    0%   { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-/* ------------------------------------------------------
-   SKILLS SECTION
+/* Typewriter animation */
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #00aaff;
+    width: 0;
+    animation: typing 3s steps(30), blink 0.7s infinite step-end alternate;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to   { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* ---------------------------------------------------------
+   CARD SECTIONS (projects, about, etc.)
+--------------------------------------------------------- */
+
+.section {
+    padding: 100px 20px;
+    max-width: 900px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: revealSection 1.2s ease forwards;
+}
+
+@keyframes revealSection {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Glassmorphism card with 3D hover */
+.card {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    transition: 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: translateY(-12px) perspective(800px) rotateX(6deg);
+    box-shadow: 0 20px 40px rgba(0,140,255,0.4);
+    border-color: #00aaff;
+}
+
+/* Fancy links */
+.card a {
+    color: #00c3ff;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+}
+
+.card a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: -2px;
+    left: 0;
+    background: #00c3ff;
+    transition: 0.3s;
+}
+
+.card a:hover::after {
+    width: 100%;
+}
+
+/* ---------------------------------------------------------
+   SKILLS BADGES
 --------------------------------------------------------- */
 
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 12px;
-    list-style: none;
-    margin-top: 25px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .skills-list li {
-    padding: 12px 25px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 30px;
+    list-style: none;
+    padding: 14px 22px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 40px;
+    border: 1px solid rgba(255,255,255,0.15);
     font-size: 15px;
-    transition: 0.3s ease;
+    backdrop-filter: blur(8px);
+    transition: 0.25s ease;
 }
 
 .skills-list li:hover {
-    transform: scale(1.1);
-    background: rgba(0,150,255,0.3);
-    box-shadow: 0 0 20px rgba(0,150,255,0.4);
+    transform: scale(1.15);
+    background: rgba(0,140,255,0.4);
+    box-shadow: 0 0 20px rgba(0,140,255,0.6);
 }
 
-
-/* ------------------------------------------------------
-   PROJECT CARDS
---------------------------------------------------------- */
-
-.project {
-    background: rgba(255,255,255,0.05);
-    padding: 25px;
-    margin: 25px 0;
-    border-radius: 15px;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 3px 25px rgba(0,0,0,0.4);
-    transition: 0.35s ease;
-}
-
-.project:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 10px 35px rgba(0,150,255,0.3);
-}
-
-.project a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #00aaff;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.project a:hover {
-    color: #55caff;
-    text-shadow: 0 0 10px rgba(0,150,255,0.6);
-}
-
-
-/* ------------------------------------------------------
+/* ---------------------------------------------------------
    CONTACT FORM
 --------------------------------------------------------- */
 
 #contact form {
-    max-width: 480px;
-    margin: 40px auto;
+    max-width: 450px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -184,60 +214,33 @@ h1, h2, h3 {
 
 #contact input,
 #contact textarea {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
     padding: 14px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    color: #eee;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    color: white;
     backdrop-filter: blur(8px);
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 #contact input:focus,
 #contact textarea:focus {
-    border: 1px solid #00aaff;
-    box-shadow: 0 0 10px rgba(0,150,255,0.4);
+    border-color: #00aaff;
+    box-shadow: 0 0 12px rgba(0,140,255,0.6);
 }
 
 #contact button {
     padding: 14px;
-    background: linear-gradient(135deg, #008cff, #00c6ff);
+    border-radius: 12px;
     border: none;
-    border-radius: 10px;
+    background: linear-gradient(120deg, #008cff, #00eaff);
     color: white;
-    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
     transition: 0.3s ease;
-    font-weight: bold;
 }
 
 #contact button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0,150,255,0.5);
-}
-
-#form-status {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: 600;
-}
-
-
-/* ------------------------------------------------------
-    MOBILE FRIENDLY
---------------------------------------------------------- */
-
-@media (max-width: 768px) {
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; }
-    .profile-pic {
-        width: 120px;
-        height: 120px;
-    }
-    .section {
-        padding: 60px 20px;
-    }
+    transform: scale(1.07);
+    box-shadow: 0 0 25px rgba(0,140,255,0.8);
 }
