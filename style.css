@@ -244,3 +244,41 @@ body::before {
     transform: scale(1.07);
     box-shadow: 0 0 25px rgba(0,140,255,0.8);
 }
+
+/* Page container for proper centering on all resolutions */
+.section {
+    max-width: 1000px;   /* prevents stretching on ultra-wide screens */
+    margin: 0 auto;      /* centers the content */
+    padding: 80px 20px;
+    text-align: center;  /* keeps titles & text centered */
+}
+
+/* Ensures child elements don’t push layout sideways */
+.section * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fix for Projects — center project cards */
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Fix for Skills list */
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+}
+
+/* React widget centering */
+#react-root {
+    max-width: 600px;
+    margin: 60px auto;
+}
+
