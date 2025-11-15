@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Landing Page</title>
+    <link rel="stylesheet" href="../style.css"> <!-- link to main CSS -->
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="home">
+        <img src="../images/profile.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>Hi, I'm Raj Jethwa</h1>
+        <p>Full-Stack Developer | Python, Java, JS, C#, SQL, HTML & CSS</p>
+        <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">
+            See Projects
+        </button>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- Example Project Card -->
+        <div class="project">
+            <h3>Portfolio Landing Page</h3>
+            <p>This landing page demonstrates layout, styling, and responsive design skills.</p>
+            <img src="../images/landing_page_screenshot.png" alt="Landing Page Screenshot">
+            <a href="landing_page.html" target="_blank">View Demo</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>Java & JavaScript</li>
+            <li>HTML & CSS</li>
+            <li>C#</li>
+            <li>SQL</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:rajjethwa228@gmail.com">rajjethwa228@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin">Your LinkedIn</a></p>
+    </section>
+</body>
+</html>
