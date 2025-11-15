@@ -9,218 +9,199 @@ GLOBAL RESET
 }
 
 body {
-    background: linear-gradient(135deg, #0a0f24, #111b40);
+    background: #0e1324;
     color: white;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
 /* --------------------
-SECTIONS
+SECTION BASE
 ---------------------*/
 .section {
-    max-width: 1000px;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 90px 25px;
+    padding: 60px 20px;
     text-align: center;
-
-    animation: fadeUp 1s ease forwards;
-    opacity: 0;
 }
 
-/* Section Titles */
 .section h2 {
-    font-size: 2.4rem;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #58a6ff;
-    text-shadow: 0 0 12px rgba(88, 166, 255, 0.4);
+    font-size: 2rem;
+    margin-bottom: 18px;
+    font-weight: 600;
+    color: #7eb8ff;
 }
 
 /* --------------------
-HERO SECTION
+HERO
 ---------------------*/
 .hero {
-    padding-top: 130px;
+    padding-top: 120px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+
+    /* light float animation */
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
 }
 
 .hero h1 {
-    font-size: 3.2rem;
-    margin-top: 20px;
-    text-shadow: 0 0 10px #00c3ff;
+    font-size: 2.6rem;
+    margin-top: 15px;
 }
 
 .hero p {
-    font-size: 1.3rem;
-    color: #c7d8ff;
+    color: #c6d4ff;
     margin-top: 10px;
-}
-
-/* Profile picture */
-.profile-pic {
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 20px #00eaff;
-    object-fit: cover;
-
-    animation: floatPic 4s ease-in-out infinite;
-}
-
-/* Floating animation */
-@keyframes floatPic {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
 }
 
 /* --------------------
 ABOUT
 ---------------------*/
 #about p {
-    font-size: 1.1rem;
-    color: #cdd9ff;
-    max-width: 850px;
+    max-width: 720px;
     margin: 0 auto;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    color: #d8e2ff;
+    line-height: 1.65;
 }
 
 /* --------------------
 SKILLS
 ---------------------*/
 .skills-list {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
-    gap: 18px;
-    list-style: none;
 }
 
 .skills-list li {
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 25px;
-    backdrop-filter: blur(6px);
-    transition: 0.3s ease;
+    background: #1a2238;
+    padding: 7px 15px;
+    border-radius: 6px;
+    border: 1px solid #2b3759;
+    font-size: 0.9rem;
+
+    transition: 0.2s ease;
 }
 
 .skills-list li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 12px #00d1ff;
+    transform: translateY(-3px);
 }
 
 /* --------------------
-PROJECTS
+PROJECT GRID — CLEAN FIXED LAYOUT
 ---------------------*/
 #projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+@media (max-width: 850px) {
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    #projects {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project {
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 12px rgba(0, 217, 255, 0.2);
-    backdrop-filter: blur(6px);
-    transition: 0.35s ease-in-out;
+    background: #182036;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #2c3b66;
+
+    transition: 0.25s ease;
 }
 
 .project h3 {
-    margin-bottom: 10px;
-    color: #69b7ff;
-    text-shadow: 0 0 10px rgba(0, 174, 255, 0.4);
+    margin-bottom: 8px;
+    color: #87bfff;
+}
+
+.project p {
+    font-size: 0.95rem;
+    color: #c0ccee;
 }
 
 .project a {
     display: inline-block;
-    margin-top: 12px;
-    padding: 8px 15px;
-    background: #007bff;
-    border-radius: 6px;
-    color: white;
+    margin-top: 10px;
+    color: #85c2ff;
+    font-size: 0.9rem;
     text-decoration: none;
-    transition: 0.3s;
-}
-
-.project a:hover {
-    background: #00bfff;
-    transform: translateY(-3px);
 }
 
 .project:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.35);
+    transform: translateY(-6px);
 }
 
 /* --------------------
-CONTACT FORM
+CONTACT FORM — NORMAL SIZE
 ---------------------*/
 form {
+    max-width: 420px;
+    margin: 25px auto 0;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    max-width: 600px;
-    margin: 30px auto;
-
-    background: rgba(255, 255, 255, 0.08);
-    padding: 30px;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
+    gap: 12px;
+    text-align: left;
 }
 
 form input,
 form textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1rem;
-    background: rgba(0, 0, 0, 0.25);
+    background: #1a2340;
+    border: 1px solid #2b3759;
+    padding: 10px;
+    border-radius: 6px;
     color: white;
 }
 
 form button {
     padding: 12px;
-    background: #00aaff;
+    background: #4dafff;
+    border-radius: 6px;
     border: none;
-    border-radius: 8px;
-    color: white;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: 0.3s ease;
+    font-size: 1rem;
+    transition: 0.2s ease;
 }
 
 form button:hover {
-    background: #00d5ff;
-    transform: translateY(-4px);
-    box-shadow: 0 0 15px #00e1ff;
-}
-
-/* Contact text */
-#contact a {
-    color: #7dbdff;
-    text-decoration: none;
-}
-
-#contact a:hover {
-    text-shadow: 0 0 10px #00aaff;
+    background: #68bfff;
 }
 
 /* --------------------
-ANIMATIONS
+EXTRA FEATURE (React)
 ---------------------*/
-@keyframes fadeUp {
-    0% { transform: translateY(40px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+#react-root {
+    max-width: 450px;
+    margin: 40px auto 0;
+    padding: 20px;
+    background: #182036;
+    border-radius: 8px;
+    border: 1px solid #2b3759;
 }
+
