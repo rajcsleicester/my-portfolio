@@ -3,91 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Raj Jethwa | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+
     <!-- Hero Section -->
-    <section id="home">
+    <section id="home" class="section hero">
         <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
-        <h1> Raj Jethwa </h1>
-        <p> Full-Stack Developer & Problem Solver </p>
+        <h1>Raj Jethwa</h1>
+        <p>Full-Stack Developer & Problem Solver</p>
     </section>
 
-    <!-- About Me -->
-    <section id="about">
+    <!-- About -->
+    <section id="about" class="section">
         <h2>About Me</h2>
-        <p>Currently a student in Politics and Economics, formerly a computer science student. 
-            I created this website to demonstrate the skills I learnt in Computer Science.
+        <p>
+            Currently a student in Politics and Economics, formerly studying Computer Science. 
+            I created this portfolio to showcase the skills and projects I built during my CS studies.
         </p>
     </section>
 
     <!-- Skills -->
-    <section id="skills">
+    <section id="skills" class="section">
         <h2>Skills</h2>
-        <ul>
+        <ul class="skills-list">
             <li>Python</li>
-            <li>Java </li>
-            <Li>JavaScript</Li>
+            <li>Java</li>
+            <li>JavaScript</li>
             <li>HTML & CSS</li>
             <li>C#</li>
             <li>SQL</li>
         </ul>
     </section>
 
-  <!-- Projects -->
-<section id="projects">
-    <h2>Projects</h2>
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
 
-    <!-- Python Project -->
-    <div class="project">
-        <h3>Python To-Do App</h3>
-        <p>A simple command-line to-do app with add, view, and delete functionality.</p>
-        <a href="projects/python_project/todo_app.py" target="_blank">View Code</a>
-    </div>
+        <div class="project">
+            <h3>Python To-Do App</h3>
+            <p>A simple command-line app with add, view, and delete functionality.</p>
+            <a href="projects/python_project/todo_app.py" target="_blank">View Code</a>
+        </div>
 
-    <!-- Java Project -->
-    <div class="project">
-        <h3>Java Bank App</h3>
-        <p>A CLI banking system to deposit, withdraw, and check balance.</p>
-        <a href="projects/java_project/bank_app.java" target="_blank">View Code</a>
-    </div>
+        <div class="project">
+            <h3>Java Bank App</h3>
+            <p>A CLI banking system for deposits, withdrawals, and balance checks.</p>
+            <a href="projects/java_project/bank_app.java" target="_blank">View Code</a>
+        </div>
 
-    <!-- JavaScript Project -->
-    <div class="project">
-        <h3>JavaScript Number Guessing Game</h3>
-        <p>A browser-based game where you guess a random number from 1–10.</p>
-        <a href="projects/javascript_project/guess_game.html" target="_blank">View Demo</a>
-    </div>
+        <div class="project">
+            <h3>JavaScript Number Guessing Game</h3>
+            <p>A browser-based game where you guess a random number from 1–10.</p>
+            <a href="projects/javascript_project/guess_game.html" target="_blank">View Demo</a>
+        </div>
 
-    <!-- HTML & CSS Project -->
-    <div class="project">
-        <h3>Portfolio Landing Page</h3>
-        <p>A simple HTML & CSS page demonstrating layout and styling skills.</p>
-        <a href="projects/web_project/landing_page.html" target="_blank">View Demo</a>
-    </div>
+        <div class="project">
+            <h3>Portfolio Landing Page</h3>
+            <p>A simple HTML & CSS landing layout.</p>
+            <a href="projects/web_project/landing_page.html" target="_blank">View Demo</a>
+        </div>
 
-    <!-- C# Project -->
-    <div class="project">
-        <h3>C# Calculator App</h3>
-        <p>A console application performing basic arithmetic operations.</p>
-        <a href="projects/csharp_project/calculator.cs" target="_blank">View Code</a>
-    </div>
+        <div class="project">
+            <h3>C# Calculator App</h3>
+            <p>A console calculator performing basic arithmetic operations.</p>
+            <a href="projects/csharp_project/calculator.cs" target="_blank">View Code</a>
+        </div>
 
-    <!-- SQL Project -->
-    <div class="project">
-        <h3>SQL Library Database</h3>
-        <p>Simple database with tables for books and authors, with sample queries.</p>
-        <a href="projects/sql_project/library.sql" target="_blank">View Code</a>
-    </div>
-</section>
+        <div class="project">
+            <h3>SQL Library Database</h3>
+            <p>Database schema + sample queries for books/authors.</p>
+            <a href="projects/sql_project/library.sql" target="_blank">View Code</a>
+        </div>
+    </section>
 
     <!-- Contact -->
-    <section id="contact">
-        <h2>Contact</h2>
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+            <label>Name</label>
+            <input type="text" name="name" id="name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" id="email" required>
+
+            <label>Message</label>
+            <textarea name="message" id="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p id="form-status"></p>
+
         <p>Email: <a href="mailto:rajjethwa228@gmail.com">rajjethwa228@gmail.com</a></p>
         <p>GitHub: <a href="https://github.com/rajcsleicester" target="_blank">rajcsleicester</a></p>
         <p>LinkedIn: <a href="https://uk.linkedin.com/in/raj-jethwa-675768297">My LinkedIn</a></p>
     </section>
+
 </body>
 </html>
