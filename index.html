@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raj Jethwa | Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <!-- React CDN -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" defer></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" defer></script>
   <script src="react-app.js" defer></script>
@@ -24,6 +25,7 @@
       <p>
           Currently a student in Politics and Economics, formerly studying Computer Science.
           I created this portfolio to showcase my projects and skills. Built with HTML, CSS, JavaScript, React, and Node.js.
+          This site demonstrates my front-end and back-end abilities, while my projects illustrate foundational skills in SQL, C#, Python, Java, and JavaScript.
       </p>
   </section>
 
@@ -45,13 +47,55 @@
   <section id="projects" class="section">
       <h2>Projects</h2>
       <div class="projects-grid">
-          <!-- projects here -->
+          <div class="project">
+              <h3>Python To-Do App</h3>
+              <p>Command-line app with add, view, delete functionality.</p>
+              <a href="projects/python_project/todo_app.py" target="_blank">View Code</a>
+          </div>
+          <div class="project">
+              <h3>Java Bank App</h3>
+              <p>CLI banking system for deposits, withdrawals, and balance.</p>
+              <a href="projects/java_project/bank_app.java" target="_blank">View Code</a>
+          </div>
+          <div class="project">
+              <h3>JavaScript Number Guessing Game</h3>
+              <p>Browser-based game where you guess a random number from 1–10.</p>
+              <a href="projects/javascript_project/guess_game.html" target="_blank">View Demo</a>
+          </div>
+          <div class="project">
+              <h3>Portfolio Landing Page</h3>
+              <p>HTML & CSS landing page demonstrating layout and styling.</p>
+              <a href="projects/web_project/landing_page.html" target="_blank">View Demo</a>
+          </div>
+          <div class="project">
+              <h3>C# Calculator App</h3>
+              <p>Console calculator performing basic arithmetic operations.</p>
+              <a href="projects/csharp_project/calculator.cs" target="_blank">View Code</a>
+          </div>
+          <div class="project">
+              <h3>SQL Library Database</h3>
+              <p>Database schema with sample queries for books and authors.</p>
+              <a href="projects/sql_project/library.sql" target="_blank">View Code</a>
+          </div>
       </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="section glass-panel">
-      <!-- contact form -->
+      <h2>Contact Me</h2>
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <label>Name</label>
+          <input type="text" name="name" required>
+          <label>Email</label>
+          <input type="email" name="email" required>
+          <label>Message</label>
+          <textarea name="message" required></textarea>
+          <button type="submit">Send Message</button>
+      </form>
+      <p>Email: <a href="mailto:rajjethwa228@gmail.com">rajjethwa228@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/rajcsleicester" target="_blank">rajcsleicester</a></p>
+      <p>LinkedIn: <a href="https://uk.linkedin.com/in/raj-jethwa-675768297">LinkedIn</a></p>
   </section>
 
   <!-- Interactive React Feature -->
