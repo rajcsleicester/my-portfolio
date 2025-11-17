@@ -3,6 +3,16 @@ const { useState, useEffect } = React;
 function SkillCard() {
   const [angle, setAngle] = useState(0);
 
+  const words = [
+    "Versatile",
+    "Analytical",
+    "Adaptable",
+    "Collaborative",
+    "Innovative",
+    "Reliable",
+    "Curious"
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => setAngle(a => a + 0.5), 16);
     return () => clearInterval(interval);
@@ -27,24 +37,26 @@ function SkillCard() {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    fontWeight: 'bold',
-    fontSize: '1.2rem',
     borderRadius: '20px',
-    color: 'white'
+    color: 'white',
+    textAlign: 'center',
+    padding: '10px',
+    lineHeight: '1.4rem',
+    fontWeight: 'bold'
   };
 
   const frontStyle = {
     ...faceStyle,
     background: 'linear-gradient(135deg,#00eaff,#007bff)',
+    fontSize: '1.2rem'
   };
 
   const backStyle = {
     ...faceStyle,
     background: 'linear-gradient(135deg,#007bff,#00eaff)',
     transform: 'rotateY(180deg)',
-    padding: '10px',
     fontSize: '1rem',
-    lineHeight: '1.4rem'
+    flexDirection: 'column'
   };
 
   return React.createElement('div', {
@@ -58,9 +70,9 @@ function SkillCard() {
     }
   },
     React.createElement('div', { style: cardStyle },
-      React.createElement('div', { style: frontStyle }, "Raj's Skills Card"),
+      React.createElement('div', { style: frontStyle }, "Raj's Skills"),
       React.createElement('div', { style: backStyle },
-        "Versatile, Analytical, Adapatable, Collaborative, Innovative, Reliable, Curious"
+        words.map(word => React.createElement('div', { key: word }, word))
       )
     )
   );
@@ -68,6 +80,7 @@ function SkillCard() {
 
 const root = ReactDOM.createRoot(document.getElementById('react-root'));
 root.render(React.createElement(SkillCard));
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('react-root'));
