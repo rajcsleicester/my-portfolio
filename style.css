@@ -250,3 +250,47 @@ form button:hover {
     padding: 20px;
   }
 }
+
+#education.education-section {
+  width: 80%;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+#education h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+
+.education-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+
+  font-size: 1.05rem;
+  color: #e6e6e6;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.education-list li:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+}
