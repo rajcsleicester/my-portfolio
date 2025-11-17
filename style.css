@@ -45,3 +45,72 @@ form button:hover {background:#00d5ff; transform:translateY(-4px); box-shadow:0 
 @keyframes glowPic {0%{box-shadow:0 0 20px #00eaff,0 0 40px #00bfff inset;}50%{box-shadow:0 0 35px #00eaff,0 0 60px #00bfff inset;}100%{box-shadow:0 0 20px #00eaff,0 0 40px #00bfff inset;}}
 @keyframes shimmerText {0%{text-shadow:0 0 10px #00eaff,0 0 20px #00bfff;}50%{text-shadow:0 0 25px #00eaff,0 0 50px #00bfff;}100%{text-shadow:0 0 10px #00eaff,0 0 20px #00bfff;}}
 @keyframes fadeUp {0%{transform:translateY(40px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
+
+.timeline {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 40px;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -11px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  background: #00b4d8;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.experience-date {
+  font-style: italic;
+  color: #aad8ff;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.timeline-content ul {
+  margin-left: 20px;
+}
+
+.timeline-content ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Mobile-friendly */
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 20px;
+    border-left-width: 2px;
+  }
+
+  .timeline-dot {
+    left: -10px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
