@@ -1,5 +1,3 @@
-# Simple To-Do CLI App
-
 TASK_FILE = "tasks.txt"
 
 def load_tasks():
