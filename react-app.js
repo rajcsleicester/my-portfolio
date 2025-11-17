@@ -18,15 +18,24 @@ function SkillCard() {
     return () => clearInterval(interval);
   }, []);
 
+  const cardContainer = {
+    width: '100%',
+    height: '200px',
+    perspective: '1000px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
+
   const cardStyle = {
     width: '250px',
     height: '150px',
     borderRadius: '20px',
     transformStyle: 'preserve-3d',
     transform: `rotateY(${angle}deg)`,
-    boxShadow: '0 0 30px #00eaff, 0 0 60px #007bff inset',
-    textAlign: 'center',
+    transition: 'transform 0.1s linear',
     position: 'relative',
+    boxShadow: '0 0 30px #00eaff, 0 0 60px #007bff inset'
   };
 
   const faceStyle = {
@@ -34,14 +43,13 @@ function SkillCard() {
     width: '100%',
     height: '100%',
     backfaceVisibility: 'hidden',
+    borderRadius: '20px',
+    color: 'white',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: '20px',
-    color: 'white',
     textAlign: 'center',
     padding: '10px',
-    lineHeight: '1.4rem',
     fontWeight: 'bold'
   };
 
@@ -55,20 +63,11 @@ function SkillCard() {
     ...faceStyle,
     background: 'linear-gradient(135deg,#007bff,#00eaff)',
     transform: 'rotateY(180deg)',
-    fontSize: '1rem',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    fontSize: '1rem'
   };
 
-  return React.createElement('div', {
-    style: {
-      width: '100%',
-      height: '200px',
-      perspective: '1000px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }
-  },
+  return React.createElement('div', { style: cardContainer },
     React.createElement('div', { style: cardStyle },
       React.createElement('div', { style: frontStyle }, "Raj's Skills"),
       React.createElement('div', { style: backStyle },
@@ -77,11 +76,6 @@ function SkillCard() {
     )
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById('react-root'));
-root.render(React.createElement(SkillCard));
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('react-root'));
 root.render(React.createElement(SkillCard));
