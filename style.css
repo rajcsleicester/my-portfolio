@@ -1,13 +1,10 @@
-/* -------------------- GLOBAL -------------------- */
 * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif;}
 body {background: linear-gradient(135deg,#0a0f24,#111b40); color:white; overflow-x:hidden;}
 html {scroll-behavior:smooth;}
 
-/* -------------------- SECTIONS -------------------- */
 .section { max-width: 1000px; margin:0 auto; padding:80px 20px; text-align:center; position:relative; }
 h2 { font-size:2.6rem; margin-bottom:30px; color:#58a6ff; text-shadow:0 0 12px rgba(88,166,255,0.5); }
 
-/* -------------------- GLASS PANELS -------------------- */
 .glass-panel {
   background: rgba(0,0,0,0.25);
   border-radius:20px;
@@ -19,7 +16,6 @@ h2 { font-size:2.6rem; margin-bottom:30px; color:#58a6ff; text-shadow:0 0 12px r
   opacity:0;
 }
 
-/* -------------------- HERO -------------------- */
 .hero {padding-top:140px;}
 .profile-pic {
   width:180px;
@@ -43,7 +39,6 @@ h2 { font-size:2.6rem; margin-bottom:30px; color:#58a6ff; text-shadow:0 0 12px r
   animation:fadeUp 1.5s ease forwards;
 }
 
-/* -------------------- SKILLS -------------------- */
 .skills-list {
   display:flex;
   flex-wrap:wrap;
@@ -66,7 +61,6 @@ h2 { font-size:2.6rem; margin-bottom:30px; color:#58a6ff; text-shadow:0 0 12px r
   box-shadow:0 0 25px #00eaff,0 0 40px #00bfff inset;
 }
 
-/* -------------------- PROJECTS -------------------- */
 .projects-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -111,7 +105,6 @@ h2 { font-size:2.6rem; margin-bottom:30px; color:#58a6ff; text-shadow:0 0 12px r
   transform:translateY(-3px);
 }
 
-/* -------------------- CONTACT -------------------- */
 form {
   display:flex;
   flex-direction:column;
@@ -149,7 +142,6 @@ form button:hover {
   box-shadow:0 0 20px #00e1ff;
 }
 
-/* -------------------- REACT FEATURE -------------------- */
 #react-root {
   max-width:600px;
   margin:50px auto;
@@ -161,7 +153,6 @@ form button:hover {
   box-shadow:0 0 30px rgba(0,217,255,0.25);
 }
 
-/* -------------------- ANIMATIONS -------------------- */
 @keyframes floatPic {
   0%{transform:translateY(0);}
   50%{transform:translateY(-20px);}
@@ -181,8 +172,6 @@ form button:hover {
   0%{transform:translateY(40px);opacity:0;}
   100%{transform:translateY(0);opacity:1;}
 }
-
-/* -------------------- TIMELINE (WORK EXPERIENCE) -------------------- */
 
 .timeline {
   position: relative;
@@ -246,7 +235,6 @@ form button:hover {
   color: #e4f1ff;
 }
 
-/* Mobile-friendly */
 @media(max-width: 600px) {
   .timeline {
     padding-left: 30px;
