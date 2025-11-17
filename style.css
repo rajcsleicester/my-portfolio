@@ -202,7 +202,7 @@ form button:hover {
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
-#education h2 { font-size: 2rem; margin-bottom: 20px; font-weight: 700; color: #ffffff; text-align: center; }
+#education h2 { font-size: 2rem; margin-bottom: 20px; font-weight: 700; color: #58a6ff; text-align: center; }
 .education-list { list-style: none; padding: 0; }
 .education-list li {
   background: rgba(255, 255, 255, 0.08);
