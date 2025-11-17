@@ -202,22 +202,40 @@ form button:hover {
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
-#education h2 { font-size: 2rem; margin-bottom: 20px; font-weight: 700; color: #58a6ff; text-align: center; }
-.education-list { list-style: none; padding: 0; }
+
+#education h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #58a6ff; 
+  text-align: center;
+  text-shadow: 0 0 12px rgba(88, 166, 255, 0.5);
+}
+
+.education-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
 .education-list li {
   background: rgba(255, 255, 255, 0.08);
   padding: 15px 20px;
   margin-bottom: 12px;
   border-radius: 12px;
   font-size: 1.05rem;
-  color: #e6e6e6;
+  color: #58a6ff; 
   border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  text-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
 }
+
 .education-list li:hover {
   background: rgba(255, 255, 255, 0.18);
   transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
 }
+
 
 @keyframes floatPic {0%{transform:translateY(0);}50%{transform:translateY(-20px);}100%{transform:translateY(0);}}
 @keyframes glowPic {0%{box-shadow:0 0 20px #00eaff,0 0 40px #00bfff inset;}50%{box-shadow:0 0 35px #00eaff,0 0 60px #00bfff inset;}100%{box-shadow:0 0 20px #00eaff,0 0 40px #00bfff inset;}}
