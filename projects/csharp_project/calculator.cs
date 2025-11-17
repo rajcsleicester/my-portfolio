@@ -59,7 +59,7 @@ class Calculator
             if (again != "y")
                 break;
 
-            Console.Clear(); // Clear console for next calculation
+            Console.Clear(); 
         }
 
         Console.WriteLine("Goodbye!");
