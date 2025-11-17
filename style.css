@@ -273,11 +273,12 @@ form button:hover {
   text-align: center;
 }
 
-.education-list ul {
+.education-list {
   list-style: none;
   padding: 0;
 }
 
+.education-list li {
   background: rgba(255, 255, 255, 0.08);
   padding: 15px 20px;
   margin-bottom: 12px;
