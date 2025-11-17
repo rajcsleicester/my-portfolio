@@ -58,7 +58,7 @@ function SkillCard() {
     }
   },
     React.createElement('div', { style: cardStyle },
-      React.createElement('div', { style: frontStyle }, "Raj's Skills"),
+      React.createElement('div', { style: frontStyle }, "Raj's Skills Card"),
       React.createElement('div', { style: backStyle },
         "Versatile, Analytical, Adapatable, Collaborative, Innovative, Reliable, Curious"
       )
