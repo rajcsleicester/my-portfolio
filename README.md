@@ -1,6 +1,6 @@
 # Raj Jethwa - Full-Stack Developer
 
-Hi! I'm **Raj**, a aspiring Full-Stack Developer and problem solver.  
+Hi! I'm **Raj**, an Full-Stack Developer and problem solver, with experience in Data Analysis.  
 Currently exploring **Politics & Economics** while building digital skills in **Python, Java, JavaScript, C#, HTML & CSS,Javascript, React,NodeJS and SQL**.  
 
 ---
