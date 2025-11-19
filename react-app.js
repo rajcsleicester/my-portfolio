@@ -37,130 +37,32 @@ function FuturisticLoader() {
 
   if (!show) return null;
 
-  return React.createElement(
-    "div",
-    {
-      style: {
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        background: "black",
-        color: "#00eaff",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "20px",
-        zIndex: 9999
-      }
-    },
-    React.createElement(
-      "pre",
-      {
-        style: {
-          fontFamily: "monospace",
-          fontSize: "1rem",
-          whiteSpace: "pre-wrap",
-          lineHeight: "1.4em",
-          maxWidth: "600px",
-          textAlign: "left"
-        }
-      },
-      text
-    )
-  );
+  return React.createElement("pre", { className: "futuristic-loader" }, text);
 }
 
 function Menu() {
-  const style = {
-    position: 'fixed',
-    top: '20px',
-    right: '20px',
-    color: 'white',
-    fontFamily: 'sans-serif',
-    zIndex: 10000
-  };
-  return React.createElement('div', { style }, 'Menu');
+  return React.createElement("div", { className: "menu" }, "Menu");
 }
 
 function SkillCard() {
   const [angle, setAngle] = useState(0);
-
-  const words = [
-    "Versatile",
-    "Analytical",
-    "Adaptable",
-    "Collaborative",
-    "Innovative",
-    "Reliable",
-    "Curious"
-  ];
+  const words = ["Versatile","Analytical","Adaptable","Collaborative","Innovative","Reliable","Curious"];
 
   useEffect(() => {
     const interval = setInterval(() => setAngle(a => a + 0.5), 16);
     return () => clearInterval(interval);
   }, []);
 
-  const cardContainer = {
-    width: "100%",
-    height: "200px",
-    perspective: "1000px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  };
-
-  const cardStyle = {
-    width: "250px",
-    height: "150px",
-    borderRadius: "20px",
-    transformStyle: "preserve-3d",
-    transform: `rotateY(${angle}deg)`,
-    transition: "transform 0.1s linear",
-    position: "relative",
-    boxShadow: "0 0 30px #00eaff, 0 0 60px #007bff inset"
-  };
-
-  const faceStyle = {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    backfaceVisibility: "hidden",
-    borderRadius: "20px",
-    color: "white",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    padding: "10px",
-    fontWeight: "bold"
-  };
-
-  const frontStyle = {
-    ...faceStyle,
-    background: "linear-gradient(135deg,#00eaff,#007bff)",
-    fontSize: "1.2rem"
-  };
-
-  const backStyle = {
-    ...faceStyle,
-    background: "linear-gradient(135deg,#007bff,#00eaff)",
-    transform: "rotateY(180deg)",
-    flexDirection: "column",
-    fontSize: "1rem"
-  };
-
   return React.createElement(
     "div",
-    { style: cardContainer },
+    { className: "skill-card-container" },
     React.createElement(
       "div",
-      { style: cardStyle },
-      React.createElement("div", { style: frontStyle }, "Raj's Skills"),
+      { className: "skill-card", style: { transform: `rotateY(${angle}deg)` } },
+      React.createElement("div", { className: "skill-card-face skill-card-front" }, "Raj's Skills"),
       React.createElement(
         "div",
-        { style: backStyle },
+        { className: "skill-card-face skill-card-back" },
         words.map(word => React.createElement("div", { key: word }, word))
       )
     )
@@ -173,13 +75,10 @@ function App() {
     null,
     React.createElement(FuturisticLoader),
     React.createElement(Menu),
-    React.createElement(
-      'div',
-      { style: { position: 'absolute', bottom: '50px', width: '100%', display: 'flex', justifyContent: 'center' } },
-      React.createElement(SkillCard)
-    )
+    React.createElement(SkillCard)
   );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("react-root"));
 root.render(React.createElement(App));
+
