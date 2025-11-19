@@ -1,5 +1,80 @@
 const { useState, useEffect } = React;
 
+/* ================================
+   FUTURISTIC CYAN LOADER
+================================= */
+
+function FuturisticLoader() {
+  const [show, setShow] = useState(true);
+  const [text, setText] = useState("");
+
+  const lines = [
+    "Initializing Raj Jethwa...",
+    "Loading Full-Stack Systems...",
+    "Establishing Secure Connection...",
+    "Launching Portfolio Interface..."
+  ];
+
+  useEffect(() => {
+    let line = 0;
+    let char = 0;
+
+    const interval = setInterval(() => {
+      if (line < lines.length) {
+        const full = lines[line];
+        if (char < full.length) {
+          setText(prev => prev + full[char]);
+          char++;
+        } else {
+          setText(prev => prev + "\n");
+          char = 0;
+          line++;
+        }
+      } else {
+        clearInterval(interval);
+        setTimeout(() => setShow(false), 700);
+      }
+    }, 40);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!show) return null;
+
+  return React.createElement(
+    "div",
+    {
+      style: {
+        position: "fixed",
+        inset: 0,
+        background: "black",
+        color: "#00eaff",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "20px",
+        zIndex: 9999
+      }
+    },
+    React.createElement(
+      "pre",
+      {
+        style: {
+          fontFamily: "monospace",
+          fontSize: "1rem",
+          whiteSpace: "pre-wrap",
+          lineHeight: "1.4em"
+        }
+      },
+      text
+    )
+  );
+}
+
+/* ================================
+   SKILLCARD (YOUR ORIGINAL CODE)
+================================= */
+
 function SkillCard() {
   const [angle, setAngle] = useState(0);
 
@@ -19,63 +94,85 @@ function SkillCard() {
   }, []);
 
   const cardContainer = {
-    width: '100%',
-    height: '200px',
-    perspective: '1000px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
+    width: "100%",
+    height: "200px",
+    perspective: "1000px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   };
 
   const cardStyle = {
-    width: '250px',
-    height: '150px',
-    borderRadius: '20px',
-    transformStyle: 'preserve-3d',
+    width: "250px",
+    height: "150px",
+    borderRadius: "20px",
+    transformStyle: "preserve-3d",
     transform: `rotateY(${angle}deg)`,
-    transition: 'transform 0.1s linear',
-    position: 'relative',
-    boxShadow: '0 0 30px #00eaff, 0 0 60px #007bff inset'
+    transition: "transform 0.1s linear",
+    position: "relative",
+    boxShadow: "0 0 30px #00eaff, 0 0 60px #007bff inset"
   };
 
   const faceStyle = {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    backfaceVisibility: 'hidden',
-    borderRadius: '20px',
-    color: 'white',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    padding: '10px',
-    fontWeight: 'bold'
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    backfaceVisibility: "hidden",
+    borderRadius: "20px",
+    color: "white",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    padding: "10px",
+    fontWeight: "bold"
   };
 
   const frontStyle = {
     ...faceStyle,
-    background: 'linear-gradient(135deg,#00eaff,#007bff)',
-    fontSize: '1.2rem'
+    background: "linear-gradient(135deg,#00eaff,#007bff)",
+    fontSize: "1.2rem"
   };
 
   const backStyle = {
     ...faceStyle,
-    background: 'linear-gradient(135deg,#007bff,#00eaff)',
-    transform: 'rotateY(180deg)',
-    flexDirection: 'column',
-    fontSize: '1rem'
+    background: "linear-gradient(135deg,#007bff,#00eaff)",
+    transform: "rotateY(180deg)",
+    flexDirection: "column",
+    fontSize: "1rem"
   };
 
-  return React.createElement('div', { style: cardContainer },
-    React.createElement('div', { style: cardStyle },
-      React.createElement('div', { style: frontStyle }, "Raj's Skills"),
-      React.createElement('div', { style: backStyle },
-        words.map(word => React.createElement('div', { key: word }, word))
+  return React.createElement(
+    "div",
+    { style: cardContainer },
+    React.createElement(
+      "div",
+      { style: cardStyle },
+      React.createElement("div", { style: frontStyle }, "Raj's Skills"),
+      React.createElement(
+        "div",
+        { style: backStyle },
+        words.map(word =>
+          React.createElement("div", { key: word }, word)
+        )
       )
     )
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('react-root'));
-root.render(React.createElement(SkillCard));
+/* ================================
+   ROOT RENDER
+================================= */
+
+function App() {
+  return React.createElement(
+    React.Fragment,
+    null,
+    React.createElement(FuturisticLoader),
+    React.createElement(SkillCard)
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("react-root"));
+root.render(React.createElement(App));
+
