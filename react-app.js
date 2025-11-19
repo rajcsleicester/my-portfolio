@@ -33,7 +33,6 @@ function SkillCard() {
     borderRadius: '20px',
     transformStyle: 'preserve-3d',
     transform: `rotateY(${angle}deg)`,
-    transition: 'transform 0.1s linear',
     position: 'relative',
     boxShadow: '0 0 30px #00eaff, 0 0 60px #007bff inset'
   };
@@ -71,7 +70,7 @@ function SkillCard() {
     React.createElement('div', { style: cardStyle },
       React.createElement('div', { style: frontStyle }, "Raj's Skills"),
       React.createElement('div', { style: backStyle },
-        words.map(word => React.createElement('div', { key: word }, word))
+        words.map(word => React.createElement('div', { key: word, style: { margin: '4px 0' } }, word))
       )
     )
   );
@@ -79,3 +78,4 @@ function SkillCard() {
 
 const root = ReactDOM.createRoot(document.getElementById('react-root'));
 root.render(React.createElement(SkillCard));
+
