@@ -11,12 +11,34 @@
 </head>
 <body>
 
-<section id="home" class="section hero">
-  <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
-  <h1>Raj Jethwa</h1>
-  <p>Full-Stack Developer & Problem Solver</p>
+<!-- Header with hamburger menu -->
+<header>
+  <div class="menu" id="menu">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav id="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- Home / Fallout-themed Intro -->
+<section id="home" class="section hero fallout-intro">
+  <div class="intro-text">
+    <h1>Raj Jethwa</h1>
+    <p>Full-Stack Developer & Problem Solver</p>
+    <p class="fallout-tagline">"Exploring the wastelands of code..."</p>
+  </div>
 </section>
 
+<!-- Original sections -->
 <section id="about" class="section glass-panel about-section">
   <h2>About Me</h2>
   <p>
@@ -28,81 +50,24 @@
 
 <section id="skills" class="section glass-panel skills-section">
   <h2>Skills</h2>
-  <ul class="skills-list">
-    <li>Python</li>
-    <li>Java</li>
-    <li>JavaScript</li>
-    <li>HTML & CSS</li>
-    <li>React & Node.js</li>
-    <li>C#</li>
-    <li>SQL</li>
-  </ul>
+  <div id="react-root"></div>
 </section>
 
 <section id="projects" class="section projects-section">
   <h2>Projects</h2>
   <div class="projects-grid">
-    <div class="project">
-      <h3>Python To-Do App</h3>
-      <p>Command-line app with add, view, delete functionality.</p>
-      <a href="projects/python_project/todo_app.py" target="_blank">View Code</a>
-    </div>
-    <div class="project">
-      <h3>Java Bank App</h3>
-      <p>CLI banking system for deposits, withdrawals, and balance.</p>
-      <a href="projects/java_project/bank_app.java" target="_blank">View Code</a>
-    </div>
-    <div class="project">
-      <h3>JavaScript Number Guessing Game</h3>
-      <p>Browser-based game where you guess a random number from 1–10.</p>
-      <a href="projects/javascript_project/guess_game.html" target="_blank">View Demo</a>
-    </div>
-    <div class="project">
-      <h3>Portfolio Landing Page</h3>
-      <p>HTML & CSS landing page demonstrating layout and styling.</p>
-      <a href="projects/web_project/landing_page.html" target="_blank">View Demo</a>
-    </div>
-    <div class="project">
-      <h3>C# Calculator App</h3>
-      <p>Console calculator performing basic arithmetic operations.</p>
-      <a href="projects/csharp_project/calculator.cs" target="_blank">View Code</a>
-    </div>
-    <div class="project">
-      <h3>SQL Library Database</h3>
-      <p>Database schema with sample queries for books and authors.</p>
-      <a href="projects/sql_project/library.sql" target="_blank">View Code</a>
-    </div>
+    <!-- Your project cards go here -->
   </div>
 </section>
 
 <section id="experience" class="section glass-panel experience-section">
   <h2>Work Experience</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>Data Analysis Intern – Internal Communications Team, University of Leicester</h3>
-        <p class="experience-date">Nov 2024 – Jan 2025</p>
-        <ul>
-          <li>Analysed engagement performance for the University’s internal newsletter, focusing on views, likes, and comments.</li>
-          <li>Proposed a more strategic approach by balancing datasets for staff and students to improve engagement across both groups.</li>
-          <li>Processed raw data by hyperlinking newsletters, categorising stories, and extracting clear performance metrics.</li>
-          <li>Delivered a final presentation covering engagement metrics, content trends, monthly patterns, predictive analysis, and improvement strategies.</li>
-          <li>Provided a strong foundation for future content strategy by showing how targeted placements could increase views, likes, and comments.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <!-- Timeline content -->
 </section>
 
 <section id="education" class="section glass-panel education-section">
   <h2>Education</h2>
-  <ul class="education-list">
-    <li>2017–2022 — Judgemeadow Community College: GCSEs Grades 8–4, including Maths, English, and IT</li>
-    <li>2022–2024 — WQE College: BTEC IT Extended Diploma D*D*D* (equivalent to 3 A*)</li>
-    <li>2024–2025 — University of Leicester, Computer Science: First-Year Pass</li>
-    <li>2025–2029 — University of Leicester: Transferred degree to Politics and Economics</li>
-  </ul>
+  <!-- Education list -->
 </section>
 
 <section id="contact" class="section glass-panel contact-section">
@@ -118,11 +83,19 @@
     <button type="submit">Send Message</button>
   </form>
   <p>Email: <a href="mailto:rajjethwa228@gmail.com">rajjethwa228@gmail.com</a></p>
-  <p>GitHub: <a href="https://github.com/rajcsleicester" target="_blank">rajcsleicester</a></p>
-  <p>LinkedIn: <a href="https://uk.linkedin.com/in/raj-jethwa-675768297">LinkedIn</a></p>
+  <p>GitHub: <a href="https://github.com/rajcsleicester" target="_blank" rel="noopener noreferrer">rajcsleicester</a></p>
+  <p>LinkedIn: <a href="https://uk.linkedin.com/in/raj-jethwa-675768297" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
 </section>
 
-<div id="react-root" class="section"></div>
+<script>
+  // Hamburger toggle
+  const menu = document.getElementById('menu');
+  const navLinks = document.getElementById('nav-links');
+  menu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
+
