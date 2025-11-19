@@ -86,37 +86,26 @@ header {
   position: relative;
 }
 
-/* Profile face */
+/* Profile picture wrapper */
 .profile-face-wrapper {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 120px;       /* fixed size */
+  height: 120px;
+  margin: 0 auto;
 }
 
+/* Profile picture */
 .profile-face {
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 4px solid #00ff00;
   box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00 inset;
-  animation: flicker 1.5s infinite alternate;
   object-fit: cover;
+  animation: flicker 1.5s infinite alternate;
 }
 
-/* Optional halo glow */
-.profile-face::after {
-  content: '';
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  top: -10px;
-  left: -10px;
-  box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00 inset;
-  z-index: -1;
-}
-
+/* Text in intro */
 .fallout-intro h1 {
   font-size: 3rem;
   color: #00ff00;
@@ -258,4 +247,5 @@ section {
   padding-top: 100px;
   padding-bottom: 50px;
 }
+
 
