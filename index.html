@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<!-- Header with hamburger menu -->
+<!-- Hamburger Menu -->
 <header>
   <div class="menu" id="menu">
     <div></div>
@@ -29,7 +29,7 @@
   </nav>
 </header>
 
-<!-- Home / Fallout-themed Intro -->
+<!-- Home / Fallout-style intro -->
 <section id="home" class="section hero fallout-intro">
   <div class="intro-text">
     <h1>Raj Jethwa</h1>
@@ -38,7 +38,7 @@
   </div>
 </section>
 
-<!-- Original sections -->
+<!-- About section -->
 <section id="about" class="section glass-panel about-section">
   <h2>About Me</h2>
   <p>
@@ -48,28 +48,33 @@
   </p>
 </section>
 
+<!-- Skills section -->
 <section id="skills" class="section glass-panel skills-section">
   <h2>Skills</h2>
   <div id="react-root"></div>
 </section>
 
+<!-- Projects section -->
 <section id="projects" class="section projects-section">
   <h2>Projects</h2>
   <div class="projects-grid">
-    <!-- Your project cards go here -->
+    <!-- Project cards here -->
   </div>
 </section>
 
+<!-- Experience section -->
 <section id="experience" class="section glass-panel experience-section">
   <h2>Work Experience</h2>
   <!-- Timeline content -->
 </section>
 
+<!-- Education section -->
 <section id="education" class="section glass-panel education-section">
   <h2>Education</h2>
   <!-- Education list -->
 </section>
 
+<!-- Contact section -->
 <section id="contact" class="section glass-panel contact-section">
   <h2>Contact Me</h2>
   <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
@@ -88,14 +93,21 @@
 </section>
 
 <script>
-  // Hamburger toggle
+  // Hamburger menu toggle
   const menu = document.getElementById('menu');
   const navLinks = document.getElementById('nav-links');
+
   menu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+  });
+
+  // Close menu when link clicked
+  document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
   });
 </script>
 
 </body>
 </html>
-
