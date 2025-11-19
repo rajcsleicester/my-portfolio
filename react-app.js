@@ -32,9 +32,10 @@ function FuturisticLoader() {
         }
       } else {
         clearInterval(interval);
-        setTimeout(() => setShow(false), 700);
+        // Keep loader on screen a bit longer
+        setTimeout(() => setShow(false), 2000);
       }
-    }, 40);
+    }, 80); // slower typing for visibility
 
     return () => clearInterval(interval);
   }, []);
@@ -46,28 +47,23 @@ function FuturisticLoader() {
     {
       style: {
         position: "fixed",
-        inset: 0,
-        background: "black",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "black",
         color: "#00eaff",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        fontFamily: "monospace",
+        fontSize: "1.2rem",
+        whiteSpace: "pre-wrap",
         padding: "20px",
         zIndex: 9999
       }
     },
-    React.createElement(
-      "pre",
-      {
-        style: {
-          fontFamily: "monospace",
-          fontSize: "1rem",
-          whiteSpace: "pre-wrap",
-          lineHeight: "1.4em"
-        }
-      },
-      text
-    )
+    text
   );
 }
 
@@ -175,4 +171,5 @@ function App() {
 
 const root = ReactDOM.createRoot(document.getElementById("react-root"));
 root.render(React.createElement(App));
+
 
