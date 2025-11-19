@@ -20,7 +20,7 @@ function SkillCard() {
 
   const cardContainer = {
     width: '100%',
-    height: '200px',
+    height: '250px',
     perspective: '1000px',
     display: 'flex',
     justifyContent: 'center',
@@ -29,12 +29,19 @@ function SkillCard() {
 
   const cardStyle = {
     width: '250px',
-    height: '150px',
-    borderRadius: '20px',
+    height: '250px',
+    borderRadius: '50%',  // Circular like Pip-Boy radar
     transformStyle: 'preserve-3d',
     transform: `rotateY(${angle}deg)`,
+    transition: 'transform 0.1s linear',
     position: 'relative',
-    boxShadow: '0 0 30px #00eaff, 0 0 60px #007bff inset'
+    boxShadow: '0 0 20px #00ff00, 0 0 40px #00ff00 inset',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    background: 'rgba(0,0,0,0.8)',
+    border: '2px solid #00ff00',
+    animation: 'pulseGlow 2s infinite alternate'
   };
 
   const faceStyle = {
@@ -42,35 +49,37 @@ function SkillCard() {
     width: '100%',
     height: '100%',
     backfaceVisibility: 'hidden',
-    borderRadius: '20px',
-    color: 'white',
+    borderRadius: '50%',
+    color: '#00ff00',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
     padding: '10px',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    flexDirection: 'column'
   };
 
   const frontStyle = {
     ...faceStyle,
-    background: 'linear-gradient(135deg,#00eaff,#007bff)',
-    fontSize: '1.2rem'
+    fontSize: '1.2rem',
+    border: '2px solid #00ff00',
+    boxShadow: '0 0 15px #00ff00, 0 0 30px #00ff00 inset',
+    background: 'rgba(0,0,0,0.9)'
   };
 
   const backStyle = {
     ...faceStyle,
-    background: 'linear-gradient(135deg,#007bff,#00eaff)',
     transform: 'rotateY(180deg)',
-    flexDirection: 'column',
-    fontSize: '1rem'
+    fontSize: '1rem',
+    gap: '5px'
   };
 
   return React.createElement('div', { style: cardContainer },
     React.createElement('div', { style: cardStyle },
       React.createElement('div', { style: frontStyle }, "Raj's Skills"),
       React.createElement('div', { style: backStyle },
-        words.map(word => React.createElement('div', { key: word, style: { margin: '4px 0' } }, word))
+        words.map(word => React.createElement('div', { key: word }, word))
       )
     )
   );
