@@ -77,6 +77,23 @@ header {
   animation: flicker 1.5s infinite alternate;
 }
 
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.profile-face {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #00ff00;
+  box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00 inset;
+  animation: flicker 1.5s infinite alternate;
+}
+
 .fallout-intro h1 {
   font-size: 3rem;
   color: #00ff00;
@@ -174,6 +191,43 @@ header {
 
 .contact-section button:hover {
   box-shadow: 0 0 10px #00ff00;
+}
+
+/* Skills bubbles */
+.skills-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.bubble {
+  padding: 15px 20px;
+  border-radius: 50%;
+  background: rgba(0, 255, 0, 0.2);
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatBubble 6s ease-in-out infinite;
+}
+
+@keyframes floatBubble {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.skills-card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 /* Section spacing */
