@@ -8,6 +8,46 @@
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" defer></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" defer></script>
   <script src="react-app.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+    }
+    .section {
+      padding: 50px 20px;
+    }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      margin: 20px 0;
+      padding: 20px;
+    }
+    .profile-pic {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    .skills-list, .education-list {
+      list-style: none;
+      padding: 0;
+    }
+    .skills-list li, .education-list li {
+      margin: 5px 0;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .project a {
+      color: #00eaff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -84,11 +124,10 @@
         <h3>Data Analysis Intern – Internal Communications Team, University of Leicester</h3>
         <p class="experience-date">Nov 2024 – Jan 2025</p>
         <ul>
-          <li>Analysed engagement performance for the University’s internal newsletter, focusing on views, likes, and comments.</li>
-          <li>Proposed a more strategic approach by balancing datasets for staff and students to improve engagement across both groups.</li>
-          <li>Processed raw data by hyperlinking newsletters, categorising stories, and extracting clear performance metrics.</li>
-          <li>Delivered a final presentation covering engagement metrics, content trends, monthly patterns, predictive analysis, and improvement strategies.</li>
-          <li>Provided a strong foundation for future content strategy by showing how targeted placements could increase views, likes, and comments.</li>
+          <li>Analysed engagement performance for the University’s internal newsletter.</li>
+          <li>Proposed a more strategic approach to improve engagement.</li>
+          <li>Processed raw data and extracted clear performance metrics.</li>
+          <li>Delivered a final presentation covering engagement and predictive analysis.</li>
         </ul>
       </div>
     </div>
@@ -98,8 +137,8 @@
 <section id="education" class="section glass-panel education-section">
   <h2>Education</h2>
   <ul class="education-list">
-    <li>2017–2022 — Judgemeadow Community College: GCSEs Grades 8–4, including Maths, English, and IT</li>
-    <li>2022–2024 — WQE College: BTEC IT Extended Diploma D*D*D* (equivalent to 3 A*)</li>
+    <li>2017–2022 — Judgemeadow Community College: GCSEs Grades 8–4</li>
+    <li>2022–2024 — WQE College: BTEC IT Extended Diploma D*D*D*</li>
     <li>2024–2025 — University of Leicester, Computer Science: First-Year Pass</li>
     <li>2025–2029 — University of Leicester: Transferred degree to Politics and Economics</li>
   </ul>
@@ -122,7 +161,7 @@
   <p>LinkedIn: <a href="https://uk.linkedin.com/in/raj-jethwa-675768297">LinkedIn</a></p>
 </section>
 
-<div id="react-root" class="section"></div>
+<div id="react-root"></div>
 
 </body>
 </html>
