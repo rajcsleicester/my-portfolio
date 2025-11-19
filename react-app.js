@@ -1,9 +1,5 @@
 const { useState, useEffect } = React;
 
-/* ================================
-   FUTURISTIC CYAN LOADER
-================================= */
-
 function FuturisticLoader() {
   const [show, setShow] = useState(true);
   const [text, setText] = useState("");
@@ -76,10 +72,6 @@ function FuturisticLoader() {
   );
 }
 
-/* ================================
-   MENU COMPONENT
-================================= */
-
 function Menu() {
   const style = {
     position: 'fixed',
@@ -91,10 +83,6 @@ function Menu() {
   };
   return React.createElement('div', { style }, 'Menu');
 }
-
-/* ================================
-   SKILLCARD (YOUR ORIGINAL CODE)
-================================= */
 
 function SkillCard() {
   const [angle, setAngle] = useState(0);
@@ -178,10 +166,6 @@ function SkillCard() {
     )
   );
 }
-
-/* ================================
-   ROOT RENDER
-================================= */
 
 function App() {
   return React.createElement(
