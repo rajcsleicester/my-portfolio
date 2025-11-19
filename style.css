@@ -1,8 +1,8 @@
 body {
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #111;
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .section {
@@ -128,8 +128,6 @@ button:hover {
   position: fixed;
   top: 20px;
   right: 20px;
-  color: white;
-  font-family: sans-serif;
   z-index: 10000;
 }
 
@@ -156,7 +154,6 @@ button:hover {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 20px;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,15 +163,15 @@ button:hover {
 }
 
 .skill-card-front {
-  background: linear-gradient(135deg,#00eaff,#007bff);
   font-size: 1.2rem;
+  background: linear-gradient(135deg,#00eaff,#007bff);
 }
 
 .skill-card-back {
-  background: linear-gradient(135deg,#007bff,#00eaff);
   transform: rotateY(180deg);
   flex-direction: column;
   font-size: 1rem;
+  background: linear-gradient(135deg,#007bff,#00eaff);
 }
 
 .futuristic-loader {
@@ -183,7 +180,6 @@ button:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: black;
   color: #00eaff;
   display: flex;
   justify-content: center;
@@ -196,4 +192,5 @@ button:hover {
   line-height: 1.4em;
   max-width: 600px;
   text-align: left;
+  background: black;
 }
