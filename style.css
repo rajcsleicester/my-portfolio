@@ -144,6 +144,11 @@ form button:hover {
   max-width:600px;
   margin:50px auto;
   padding:25px;
+  background: rgba(0,0,0,0.25);
+  border-radius:18px;
+  border:1px solid rgba(0,217,255,0.3);
+  backdrop-filter:blur(6px);
+  box-shadow:0 0 30px rgba(0,217,255,0.25);
 }
 
 .timeline {
@@ -191,11 +196,11 @@ form button:hover {
   margin: 60px auto;
   padding: 40px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 217, 255, 0.4); 
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.2);
 }
 
 #education h2 {
@@ -214,98 +219,25 @@ form button:hover {
 }
 
 .education-list li {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.25); 
   padding: 15px 20px;
   margin-bottom: 12px;
   border-radius: 12px;
   font-size: 1.05rem;
-  color: #58a6ff; 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #58a6ff;
+  border: 1px solid rgba(0, 217, 255, 0.4); /* blue border */
   transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
   text-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
 }
 
 .education-list li:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.35);
   transform: translateY(-3px);
-  box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
 }
 
-/* Animations */
+
 @keyframes floatPic {0%{transform:translateY(0);}50%{transform:translateY(-20px);}100%{transform:translateY(0);}}
 @keyframes glowPic {0%{box-shadow:0 0 20px #00eaff,0 0 40px #00bfff inset;}50%{box-shadow:0 0 35px #00eaff,0 0 60px #00bfff inset;}100%{box-shadow:0 0 20px #00eaff,0 0 40px #00bfff inset;}}
 @keyframes shimmerText {0%{text-shadow:0 0 10px #00eaff,0 0 20px #00bfff;}50%{text-shadow:0 0 25px #00eaff,0 0 50px #00bfff;}100%{text-shadow:0 0 10px #00eaff,0 0 20px #00bfff;}}
 @keyframes fadeUp {0%{transform:translateY(40px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
-
-/* ================== Added Styles for React Components ================== */
-.futuristic-loader {
-  position: fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  color:#00eaff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  z-index:9999;
-  white-space:pre-wrap;
-  font-family:monospace;
-  font-size:1rem;
-  line-height:1.4em;
-  text-align:left;
-  background: rgba(0,0,0,0.95);
-}
-
-.menu {
-  position: fixed;
-  top:20px;
-  right:20px;
-  z-index:10000;
-  color:white;
-  font-weight:600;
-}
-
-.skill-card-container {
-  position: fixed;
-  bottom:50px;
-  width:100%;
-  display:flex;
-  justify-content:center;
-}
-
-.skill-card {
-  width:250px;
-  height:150px;
-  border-radius:20px;
-  transform-style: preserve-3d;
-  position: relative;
-  box-shadow:0 0 30px #00eaff, 0 0 60px #007bff inset;
-}
-
-.skill-card-face {
-  position: absolute;
-  width:100%;
-  height:100%;
-  backface-visibility:hidden;
-  border-radius:20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:10px;
-  font-weight:bold;
-}
-
-.skill-card-front {
-  font-size:1.2rem;
-  background:linear-gradient(135deg,#00eaff,#007bff);
-}
-
-.skill-card-back {
-  font-size:1rem;
-  background:linear-gradient(135deg,#007bff,#00eaff);
-  transform:rotateY(180deg);
-  flex-direction:column;
-}
