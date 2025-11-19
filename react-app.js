@@ -1,10 +1,11 @@
 const { useState, useEffect } = React;
 
 /* ================================
-   FUTURISTIC FULL-PAGE LOADER
+   FUTURISTIC CYAN LOADER
 ================================= */
 
-function FuturisticLoader({ onFinish }) {
+function FuturisticLoader() {
+  const [show, setShow] = useState(true);
   const [text, setText] = useState("");
 
   const lines = [
@@ -31,15 +32,14 @@ function FuturisticLoader({ onFinish }) {
         }
       } else {
         clearInterval(interval);
-        // Keep loader visible 1.5s then hide
-        setTimeout(() => {
-          if (onFinish) onFinish();
-        }, 1500);
+        setTimeout(() => setShow(false), 700);
       }
-    }, 80);
+    }, 40);
 
     return () => clearInterval(interval);
   }, []);
+
+  if (!show) return null;
 
   return React.createElement(
     "div",
@@ -50,104 +50,34 @@ function FuturisticLoader({ onFinish }) {
         left: 0,
         width: "100vw",
         height: "100vh",
-        backgroundColor: "black",
+        background: "black",
         color: "#00eaff",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        fontFamily: "monospace",
-        fontSize: "1.2rem",
-        whiteSpace: "pre-wrap",
         padding: "20px",
-        zIndex: 99999
+        zIndex: 9999
       }
     },
-    text
-  );
-}
-
-/* ================================
-   MENU BUTTON WITH FADE IN
-================================= */
-
-function MenuButton({ show }) {
-  const [open, setOpen] = useState(false);
-
-  const buttonStyle = {
-    position: "fixed",
-    top: "20px",
-    right: "20px",
-    padding: "10px 15px",
-    background: "#000000aa",
-    border: "2px solid #00eaff",
-    color: "#00eaff",
-    fontFamily: "monospace",
-    fontWeight: "bold",
-    cursor: "pointer",
-    zIndex: 10000,
-    transition: "all 0.5s",
-    opacity: show ? 1 : 0
-  };
-
-  const menuStyle = {
-    position: "fixed",
-    top: "60px",
-    right: "20px",
-    background: "#000000dd",
-    border: "2px solid #00eaff",
-    padding: "10px 15px",
-    display: open ? "flex" : "none",
-    flexDirection: "column",
-    gap: "10px",
-    fontFamily: "monospace",
-    zIndex: 9999,
-    opacity: open ? 1 : 0,
-    transition: "opacity 0.3s"
-  };
-
-  const linkStyle = {
-    color: "#00eaff",
-    cursor: "pointer",
-    textDecoration: "none"
-  };
-
-  const sections = ["home", "about", "skills", "projects", "contact"];
-
-  return React.createElement(
-    React.Fragment,
-    null,
     React.createElement(
-      "div",
+      "pre",
       {
-        style: buttonStyle,
-        onClick: () => setOpen(prev => !prev)
+        style: {
+          fontFamily: "monospace",
+          fontSize: "1rem",
+          whiteSpace: "pre-wrap",
+          lineHeight: "1.4em",
+          maxWidth: "600px",
+          textAlign: "left"
+        }
       },
-      open ? "Close Menu" : "Menu"
-    ),
-    React.createElement(
-      "div",
-      { style: menuStyle },
-      sections.map(section =>
-        React.createElement(
-          "span",
-          {
-            key: section,
-            style: linkStyle,
-            onClick: () => {
-              const el = document.getElementById(section);
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-              setOpen(false);
-            }
-          },
-          section.charAt(0).toUpperCase() + section.slice(1)
-        )
-      )
+      text
     )
   );
 }
 
 /* ================================
-   SKILLCARD
+   SKILLCARD (YOUR ORIGINAL CODE)
 ================================= */
 
 function SkillCard() {
@@ -175,7 +105,7 @@ function SkillCard() {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "100px"
+    marginTop: "50px"
   };
 
   const cardStyle = {
@@ -228,33 +158,29 @@ function SkillCard() {
       React.createElement(
         "div",
         { style: backStyle },
-        words.map(word =>
-          React.createElement("div", { key: word }, word)
-        )
+        words.map(word => React.createElement("div", { key: word }, word))
       )
     )
   );
 }
 
 /* ================================
-   APP ROOT
+   ROOT RENDER
 ================================= */
 
 function App() {
-  const [loaderFinished, setLoaderFinished] = useState(false);
-
   return React.createElement(
     React.Fragment,
     null,
-    !loaderFinished &&
-      React.createElement(FuturisticLoader, { onFinish: () => setLoaderFinished(true) }),
-    React.createElement(MenuButton, { show: loaderFinished }),
-    React.createElement(SkillCard)
-    // All other sections in index.html remain
+    React.createElement(FuturisticLoader),
+    React.createElement(
+      "div",
+      { style: { padding: "20px" } },
+      React.createElement(SkillCard)
+    )
   );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("react-root"));
 root.render(React.createElement(App));
-
 
