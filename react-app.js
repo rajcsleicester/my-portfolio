@@ -77,6 +77,22 @@ function FuturisticLoader() {
 }
 
 /* ================================
+   MENU COMPONENT
+================================= */
+
+function Menu() {
+  const style = {
+    position: 'fixed',
+    top: '20px',
+    right: '20px',
+    color: 'white',
+    fontFamily: 'sans-serif',
+    zIndex: 10000
+  };
+  return React.createElement('div', { style }, 'Menu');
+}
+
+/* ================================
    SKILLCARD (YOUR ORIGINAL CODE)
 ================================= */
 
@@ -104,8 +120,7 @@ function SkillCard() {
     perspective: "1000px",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
-    marginTop: "50px"
+    alignItems: "center"
   };
 
   const cardStyle = {
@@ -173,9 +188,10 @@ function App() {
     React.Fragment,
     null,
     React.createElement(FuturisticLoader),
+    React.createElement(Menu),
     React.createElement(
-      "div",
-      { style: { padding: "20px" } },
+      'div',
+      { style: { position: 'absolute', bottom: '50px', width: '100%', display: 'flex', justifyContent: 'center' } },
       React.createElement(SkillCard)
     )
   );
@@ -183,4 +199,3 @@ function App() {
 
 const root = ReactDOM.createRoot(document.getElementById("react-root"));
 root.render(React.createElement(App));
-
